@@ -6,21 +6,30 @@ import Button from '../01-atoms/button/Button';
 export default function Header() {
   return (
     <header style={headerStyles}>
-        <div className='logo'>
-            <Link to="/" style={linkStyles}>Mi Proyecto React</Link>
-        </div>
-    <nav style={navStyles}>
-        {/* Aquí deberías usar el Átomo Button */}
-        <Button variant="secondary" onClick={() => console.log('Ir a Productos')}>
+      <div className="logo">
+        <Link to="/" style={linkStyles}>Menu</Link>
+      </div>
+
+      <nav style={navStyles}>
+        
+        <Button variant="secondary">
+          <Link to="/">Inicio</Link>
+        </Button>
+        <Button variant="secondary">
           Productos
         </Button>
-        <Button variant="primary" onClick={() => console.log('Ir a Contacto')}>
+
+        <Button variant="secondary">
+          <Link to="/about">Nosotros</Link>
+        </Button>
+
+        <Button variant="primary">
           Contacto
         </Button>
       </nav>
     </header>
   );
-};
+}
 
 // Estilos internos rápidos para la demostración
 const headerStyles = {
