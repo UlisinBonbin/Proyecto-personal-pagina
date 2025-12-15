@@ -1,16 +1,13 @@
 import React from 'react';
+import Header from '../03-organisms/Header';
 
 
 const MainLayout = ({ children }) => {
   return (
     <div className="main-layout">
-      {/* 03-organisms/Header.jsx (aún no existe, ¡pero lo haremos!) */}
-      <header style={{ padding: '20px', backgroundColor: '#f0f0f0' }}>
-        Barra de Navegación Global (Header)
-      </header>
+      <Header />
       
-      {/* 'children' es donde se inyectará el contenido de HomePage.jsx 
-      */}
+      {/* 'children' es donde se inyectará el contenido de HomePage.jsx */}
       <main style={{ minHeight: '80vh', padding: '20px' }}>
         {children} 
       </main>

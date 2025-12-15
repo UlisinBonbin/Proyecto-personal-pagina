@@ -1,0 +1,35 @@
+.btn {
+  padding: 10px 18px;
+  border-radius: 6px;
+  border: none;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+/* Variante primaria */
+.btn-primary {
+  background-color: #2ecc71;
+  color: white;
+}
+
+.btn-primary:hover {
+  background-color: #27ae60;
+}
+
+/* Variante secundaria */
+.btn-secondary {
+  background-color: white;
+  color: #3498db;
+  border: 2px solid #3498db;
+}
+
+.btn-secondary:hover {
+  background-color: #ecf6fc;
+}
+
+/* Efecto al hacer click */
+.btn:active {
+  transform: scale(0.97);
+}
