@@ -1,0 +1,14 @@
+.home-hero {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;   /*sube el contenido */
+  min-height: 60vh;
+  padding-top: 40px;         /* ajusta aca para subir o bajar el h1 */
+}
+
+.home-hero h1 {
+  font-size: 3.2em;
+  line-height: 1.1;
+  text-align: center;
+  margin: 0;                 /* quita margen por defecto */
+}

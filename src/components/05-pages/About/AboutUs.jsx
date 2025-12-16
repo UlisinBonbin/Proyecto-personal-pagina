@@ -1,5 +1,5 @@
 import React from 'react'
-import MainLayout from '../04-layouts/MainLayout'
+import MainLayout from '../../04-layouts/MainLayout'
 
 export default function AboutUs() {
   return (

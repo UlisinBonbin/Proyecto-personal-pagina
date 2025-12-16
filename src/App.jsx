@@ -1,8 +1,8 @@
 import React from 'react'
 import './App.css'
 import { Routes, Route } from 'react-router-dom'
-import HomePage from './components/05-pages/HomePage.jsx'
-import AboutPage from './components/05-pages/AboutUs.jsx'
+import HomePage from './components/05-pages/Home/HomePage'
+import AboutPage from './components/05-pages/About/AboutUs'
 
 
 function App() {
