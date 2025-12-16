@@ -2,8 +2,12 @@
   display: flex;
   justify-content: center;
   align-items: flex-start;   /*sube el contenido */
-  min-height: 60vh;
-  padding-top: 40px;         /* ajusta aca para subir o bajar el h1 */
+  min-height: calc(100vh - 72px); /* 👈 altura real del header */
+  padding-top: 40px;        /* ajusta aca para subir o bajar el h1 */
+  background-image: url('https://png.pngtree.com/background/20211215/original/pngtree-abstract-light-blue-background-picture-image_1459673.jpg');
+  background-size: cover;      /* 👈 cubre toda el área */
+  background-repeat: no-repeat;/* 👈 no se repite */
+  background-position: center; /* 👈 centrada */
 }
 
 .home-hero h1 {
@@ -11,4 +15,12 @@
   line-height: 1.1;
   text-align: center;
   margin: 0;                 /* quita margen por defecto */
+}
+
+* {
+  outline: 1px solid rgba(255, 0, 0, 0.08);
+}
+
+.home-hero {
+  outline: 3px solid rgba(0, 128, 255, 0.6);
 }
