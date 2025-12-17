@@ -25,7 +25,7 @@ export default function Footer() {
         </div>
       </div>
       <div className="footer-bottom">
-        <p>&copy; 2025 Pastelería Mil Sabores. Todos los derechos reservados.</p>
+        <p>&copy; 2025 Peluchitos Bonbin. Todos los derechos reservados.</p>
       </div>
     </footer>
   )
