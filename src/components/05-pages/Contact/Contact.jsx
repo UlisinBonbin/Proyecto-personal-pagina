@@ -2,6 +2,7 @@ import React from 'react'
 import { motion } from 'framer-motion'
 import MainLayout from '../../04-layouts/MainLayout'
 import './Contact.css'
+import ContactCard from '../../02-molecules/ContactCard'
 
 export default function Contact() {
   return (
@@ -21,6 +22,9 @@ export default function Contact() {
             ayudarte y nos encantaría saber opiniones sobre nuestros peluches y servicios.
           </p>   
         </div>
+        <div className="contact-cards">
+          <ContactCard/>
+          </div>
       </motion.section>
     </MainLayout>
   );
