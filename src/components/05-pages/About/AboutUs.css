@@ -1,0 +1,37 @@
+.about-hero {
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 6rem; /* aire antes del footer */
+
+  justify-content: flex-start; /* arriba */
+  align-items: center;         /* centro horizontal */
+
+  min-height: calc(100vh - 72px);
+  padding-top: 40px;
+
+  background-image: url('https://png.pngtree.com/background/20211215/original/pngtree-abstract-light-blue-background-picture-image_1459673.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.about-hero h1 {
+  text-align: center;            
+}
+
+.about-content {
+   max-width: 700px;   /* 👈 ancho cómodo de lectura */
+    margin: 0 auto;     /* 👈 lo centra */
+}
+
+
+.about-hero p {
+  text-align: center;
+  text-align: justify;
+}
+
+.about-image {
+    display: flex;
+    justify-content: center; 
+    margin: 2rem 0;
+}

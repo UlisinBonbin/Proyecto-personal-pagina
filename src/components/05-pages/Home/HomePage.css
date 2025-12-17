@@ -1,9 +1,10 @@
 .home-hero {
   display: flex;
   flex-direction: column;
+  padding-bottom: 6rem; /* aire antes del footer */
 
-  justify-content: flex-start; /* 👈 arriba */
-  align-items: center;         /* 👈 centro horizontal */
+  justify-content: flex-start; /* arriba */
+  align-items: center;         /* centro horizontal */
 
   min-height: calc(100vh - 72px);
   padding-top: 40px;
@@ -16,27 +17,28 @@
 
 
 .home-hero h1 {
-  text-align: center;               /* quita margen por defecto */
+  text-align: center;            
 }
 
 .home-hero p {
-  font-size: 1rem;
-  line-height: 1.4;
   text-align: center;
-  max-width: 600px;
-  margin-top: 20px;
 }
 
 
 .peluches-destacados {
-  display: flex;
-  gap: 1.5rem;
-  justify-content: center;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 columnas */
+  gap: 2rem;
+  justify-items: center;
+  row-gap: 6rem;    /* separación vertical */
+  column-gap: 2rem;/* separación horizontal */
+  margin-top: 4rem; /* mueve todo el bloque hacia abajo */
 }
 
 .peluches-destacados img {
-  width: 180px;
+  width: 200px;
+  height: 220px;        /* todas iguales */
+  object-fit: cover;   /* recorta sin deformar */
   border-radius: 12px;
 }
 

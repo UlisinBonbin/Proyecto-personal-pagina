@@ -1,11 +1,26 @@
 import React from 'react'
 import MainLayout from '../../04-layouts/MainLayout'
+import './AboutUs.css'
 
 export default function AboutUs() {
   return (
     <MainLayout>
-        <section>
+        <section className="about-hero">
+          <div className="about-content">
             <h1>Sobre Nosotros</h1>
+              <div className="about-image">
+                <img src="https://static.vecteezy.com/system/resources/thumbnails/073/325/515/small/cute-plush-teddy-bear-with-soft-fur-and-friendly-smile-sitting-on-a-white-background-png.png" alt="Peluchito Kawai" />
+              </div>
+            <p>
+              En Peluchitos Bonbin, nuestra misión es traer alegría y ternura a través de nuestros peluches únicos y de alta calidad. Fundada por un grupo de entusiastas del anime y los videojuegos, nuestra tienda se dedica a ofrecer una amplia variedad de peluches que capturan la esencia de tus personajes favoritos.
+            </p>
+            <p>
+              Valoramos la satisfacción del cliente y nos esforzamos por brindar un servicio excepcional. Cada peluche en nuestra colección ha sido cuidadosamente seleccionado para garantizar que cumpla con nuestros altos estándares de calidad y autenticidad.
+            </p>
+            <p>
+              Gracias por elegir Peluchitos Bonbin como tu destino para encontrar esos peluches especiales que te acompañarán en tus aventuras diarias. ¡Esperamos que disfrutes explorando nuestra tienda tanto como nosotros disfrutamos creandola para ti!
+            </p>
+          </div>
         </section>
     </MainLayout>
   )
