@@ -9,16 +9,17 @@ export default function Header() {
     <header className="header-container">
 
       <nav className="header-nav">
-        <Button variant="secondary">
-          <Link to="/">Inicio</Link>
-        </Button>
+        <Link to="/">
+          <Button variant="secondary">Inicio</Button>
+        </Link>
+
         <Button variant="secondary">
           Productos
         </Button>
 
-        <Button variant="secondary">
-          <Link to="/about">Nosotros</Link>
-        </Button>
+        <Link to="/about">
+          <Button variant="secondary">Nosotros</Button>
+        </Link>
 
         <Button variant="primary">
           Contacto
