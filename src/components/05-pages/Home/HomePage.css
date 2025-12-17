@@ -1,18 +1,45 @@
 .home-hero {
   display: flex;
-  justify-content: center;
-  align-items: flex-start;   /*sube el contenido */
-  min-height: calc(100vh - 72px); /* 👈 altura real del header */
-  padding-top: 40px;        /* ajusta aca para subir o bajar el h1 */
+  flex-direction: column;
+
+  justify-content: flex-start; /* 👈 arriba */
+  align-items: center;         /* 👈 centro horizontal */
+
+  min-height: calc(100vh - 72px);
+  padding-top: 40px;
+
   background-image: url('https://png.pngtree.com/background/20211215/original/pngtree-abstract-light-blue-background-picture-image_1459673.jpg');
-  background-size: cover;      /* 👈 cubre toda el área */
-  background-repeat: no-repeat;/* 👈 no se repite */
-  background-position: center; /* 👈 centrada */
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
 }
 
+
 .home-hero h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
+  text-align: center;               /* quita margen por defecto */
+}
+
+.home-hero p {
+  font-size: 1rem;
+  line-height: 1.4;
   text-align: center;
-  margin: 0;                 /* quita margen por defecto */
+  max-width: 600px;
+  margin-top: 20px;
+}
+
+
+.peluches-destacados {
+  display: flex;
+  gap: 1.5rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.peluches-destacados img {
+  width: 180px;
+  border-radius: 12px;
+}
+
+.home-hero h2 {
+  text-align: center;
 }
