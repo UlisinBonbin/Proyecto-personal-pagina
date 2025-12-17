@@ -4,6 +4,7 @@ import { AnimatePresence } from 'framer-motion'
 
 import HomePage from './components/05-pages/Home/HomePage'
 import AboutPage from './components/05-pages/About/AboutUs'
+import Catalog from './components/05-pages/Catalog/Catalog'
 
 function App() {
   const location = useLocation()
@@ -13,6 +14,7 @@ function App() {
       <Routes location={location} key={location.pathname}>
         <Route path='/' element={<HomePage />} />
         <Route path='/about' element={<AboutPage />} />
+        <Route path='/catalog' element={<Catalog />} />
       </Routes>
     </AnimatePresence>
   )

@@ -13,9 +13,9 @@ export default function Header() {
           <Button variant="secondary">Inicio</Button>
         </Link>
 
-        <Button variant="secondary">
-          Productos
-        </Button>
+        <Link to="/catalog">
+          <Button variant="secondary">Catálogo</Button>
+        </Link>
 
         <Link to="/about">
           <Button variant="secondary">Nosotros</Button>

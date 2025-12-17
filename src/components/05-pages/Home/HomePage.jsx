@@ -2,7 +2,10 @@ import React from 'react'
 import { motion } from 'framer-motion'
 import MainLayout from '../../04-layouts/MainLayout'
 import './HomePage.css'
-import PeluchesDestacados from '../../03-organisms/PeluchesDestacados'
+import PeluchesGrid from '../../03-organisms/PeluchesGrid'
+import peluches from '../../../data/Peluches'
+
+const destacados = peluches.slice(0, 9);
 
 export default function HomePage() {
   return (
@@ -22,7 +25,7 @@ export default function HomePage() {
           </p>
 
           <h2>Nuestros peluchitos más vendidos C:</h2>
-          <PeluchesDestacados />
+           <PeluchesGrid peluches={destacados} />
         </div>
       </motion.section>
     </MainLayout>

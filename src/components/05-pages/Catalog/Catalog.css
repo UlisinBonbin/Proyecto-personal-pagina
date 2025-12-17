@@ -1,0 +1,30 @@
+.catalog-hero {
+  background-image: url('https://wallpapers.com/images/featured/pastel-ipad-9z1oc9q732wysodb.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.catalog-hero h1 {
+  text-align: center;            
+}
+
+.catalog-content {
+   max-width: 1100px;   /* ancho cómodo de lectura */
+    margin: 0 auto; 
+    display: flex;
+  flex-direction: column;
+  padding-bottom: 6rem; /* aire antes del footer */
+
+  justify-content: flex-start; /* arriba */
+  align-items: center;         /* centro horizontal */
+
+  min-height: calc(100vh - 72px);
+  padding-top: 40px;    /* lo centra */
+}
+
+
+.catalog-hero p {
+  text-align: center;
+  text-align: justify;
+}
