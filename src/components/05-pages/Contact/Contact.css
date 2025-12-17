@@ -1,0 +1,30 @@
+.contact-hero {
+    background-image: url('https://wallpapers.com/images/featured/pastel-ipad-9z1oc9q732wysodb.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.contact-hero h1 {
+    text-align: center;            
+}
+
+.contact-content {
+    max-width: 1100px;   /* ancho cómodo de lectura */
+    margin: 0 auto; 
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 6rem; /* aire antes del footer */
+
+    justify-content: flex-start; /* arriba */
+    align-items: center;         /* centro horizontal */
+
+    min-height: calc(100vh - 72px);
+    padding-top: 40px;    /* lo centra */
+}
+
+
+.contact-hero p {
+    text-align: center;
+    text-align: justify;
+}

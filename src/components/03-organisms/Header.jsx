@@ -21,9 +21,9 @@ export default function Header() {
           <Button variant="secondary">Nosotros</Button>
         </Link>
 
-        <Button variant="primary">
-          Contacto
-        </Button>
+       <Link to="/contact">
+          <Button variant="secondary">Contacto</Button>
+        </Link>
       </nav>
     </header>
   );
