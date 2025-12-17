@@ -25,23 +25,6 @@
 }
 
 
-.peluches-destacados {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr); /* 3 columnas */
-  gap: 2rem;
-  justify-items: center;
-  row-gap: 6rem;    /* separación vertical */
-  column-gap: 2rem;/* separación horizontal */
-  margin-top: 4rem; /* mueve todo el bloque hacia abajo */
-}
-
-.peluches-destacados img {
-  width: 200px;
-  height: 220px;        /* todas iguales */
-  object-fit: cover;   /* recorta sin deformar */
-  border-radius: 12px;
-}
-
 .home-hero h2 {
   text-align: center;
 }
