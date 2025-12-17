@@ -16,11 +16,3 @@
   text-align: center;
   margin: 0;                 /* quita margen por defecto */
 }
-
-* {
-  outline: 1px solid rgba(255, 0, 0, 0.08);
-}
-
-.home-hero {
-  outline: 3px solid rgba(0, 128, 255, 0.6);
-}
