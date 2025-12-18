@@ -19,7 +19,7 @@ export default function AboutUs() {
           <div className="about-image">
             <img
               src="https://static.vecteezy.com/system/resources/thumbnails/073/325/515/small/cute-plush-teddy-bear-with-soft-fur-and-friendly-smile-sitting-on-a-white-background-png.png"
-              alt="Peluchito Kawai"
+              alt="Oso Patriarcal"
             />
           </div>
 

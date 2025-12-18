@@ -1,0 +1,8 @@
+.contact-cards-group {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+  justify-content: center;
+   position: relative;
+  top: -380px; /* sube el grupo hacia arriba */
+}
