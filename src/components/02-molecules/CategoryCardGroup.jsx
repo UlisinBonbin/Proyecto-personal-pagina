@@ -11,6 +11,9 @@ export default function CategoryCardGroup({ categorys }) {
           image={c.image}
           title={c.title}
           info={c.info}
+          buttonText={c.buttonText}
+          buttonVariant={c.buttonVariant}
+          path={c.path}
         />
       ))}
     </div>

@@ -1,7 +1,11 @@
 import React from 'react'
 import './CategoryCard.css'
+import Button from '../01-atoms/button/Button';
+import { useNavigate } from 'react-router-dom'
 
-export default function CategoryCard({ image, title, info }) {
+export default function CategoryCard({ image, title, info, buttonText,
+  buttonVariant, path}) {
+     const navigate = useNavigate()
   return (
     <div className="category-card">
       <div className="category-card-image">
@@ -10,6 +14,12 @@ export default function CategoryCard({ image, title, info }) {
 
       <h3 className="category-card-title">{title}</h3>
       <p className="category-card-info">{info}</p>
+       <Button
+        variant={buttonVariant}
+        onClick={() => navigate(path)}
+      >
+        {buttonText}
+      </Button>
     </div>
   )
 }
