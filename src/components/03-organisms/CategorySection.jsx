@@ -22,6 +22,11 @@ export default function CategorySection() {
     image: "https://i.etsystatic.com/48087715/r/il/504d35/6357366333/il_570xN.6357366333_ekbp.jpg",
     title: 'Peluches de la serie The Digital Circus',
     info: 'Descubre los peluches de la reciente serie The Digital Circus, la cual tiene un misterioso trasfondo'
+  },
+  {
+    image: "https://i.pinimg.com/736x/ae/34/a5/ae34a52802820d7aa0f48883bf32e133.jpg",
+    title: 'Peluches del videojuego Mario Bros',
+    info: 'Descubre los peluches del icónico videojuego Mario Bros, el famoso fontanero que salva el Reino Champiñón'
   }
 ];
     return (
