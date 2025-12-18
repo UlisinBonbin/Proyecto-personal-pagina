@@ -32,3 +32,8 @@
   min-height: calc(100vh - 72px);
   padding-top: 40px;
 }
+
+.category-peluches h2 {
+  text-align: center;
+  margin-top: -40px;
+}

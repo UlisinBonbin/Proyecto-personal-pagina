@@ -4,6 +4,7 @@ import MainLayout from '../../04-layouts/MainLayout'
 import './HomePage.css'
 import PeluchesGrid from '../../03-organisms/PeluchesGrid'
 import peluches from '../../../data/Peluches'
+import CategorySection from '../../03-organisms/CategorySection'
 
 const destacados = peluches.slice(0, 9);
 
@@ -26,6 +27,11 @@ export default function HomePage() {
 
           <h2>Nuestros peluchitos más vendidos C:</h2>
            <PeluchesGrid peluches={destacados} />
+        </div>
+
+        <div className="category-peluches">
+          <h2>Explora nuestras categorías</h2>
+          <CategorySection />
         </div>
       </motion.section>
     </MainLayout>
