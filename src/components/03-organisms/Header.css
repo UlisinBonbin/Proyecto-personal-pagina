@@ -21,4 +21,5 @@
   height: 40px;
   width: auto;
   cursor: pointer;
+  transform: translateY(5px); /*Para mover el logo en el eje Y*/
 }
