@@ -6,19 +6,23 @@ import HomePage from './components/05-pages/Home/HomePage'
 import AboutPage from './components/05-pages/About/AboutUs'
 import Catalog from './components/05-pages/Catalog/Catalog'
 import Contact from './components/05-pages/Contact/Contact'
+import ScrollToTop from './components/ScrollToTop'
 
 function App() {
   const location = useLocation()
 
   return (
-    <AnimatePresence mode="wait">
-      <Routes location={location} key={location.pathname}>
-        <Route path='/' element={<HomePage />} />
-        <Route path='/about' element={<AboutPage />} />
-        <Route path='/catalog' element={<Catalog />} />
-        <Route path='/contact' element={<Contact />} />
-      </Routes>
-    </AnimatePresence>
+    <>
+      <ScrollToTop />
+        <AnimatePresence mode="wait">
+          <Routes location={location} key={location.pathname}>
+          <Route path='/' element={<HomePage />} />
+          <Route path='/about' element={<AboutPage />} />
+          <Route path='/catalog' element={<Catalog />} />
+          <Route path='/contact' element={<Contact />} />
+          </Routes>
+        </AnimatePresence>
+    </>
   )
 }
 

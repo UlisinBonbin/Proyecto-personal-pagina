@@ -4,44 +4,28 @@ import CategoryCardGroup from '../02-molecules/CategoryCardGroup'
 export default function CategorySection() {
     const categories = [
   {
-    image: "https://yukharyan.com/wp-content/uploads/2020/09/final-fantasy-top.jpg",
-    title: 'Peluches Final Fantasy',
-    info: 'Descubre los peluches de la saga Final Fantasy, juegos llenos de fantasía y épicas aventuras',
-    buttonText: 'Ver Peluches Final Fantasy',
+    image: "https://d1lss44hh2trtw.cloudfront.net/assets/article/2018/06/12/Super-Smash-Bros-Ultimate-Full-Roster_1200x500.jpg",
+    title: 'Peluches de videojuegos',
+    info: 'Descubre peluches de varios videojuegos populares como Final Fantasy, Sonic y Mario Bros y más',
+    buttonText: 'Ver Peluches de Videojuegos',
     buttonVariant: 'primary',
-    path: '/catalog'
+    path: '/catalog?category=videojuegos'
   },
   {
-    image: "https://i.pinimg.com/236x/44/f1/fb/44f1fb64b3eb04eaa821fbd0421512dc.jpg",
-    title: 'Peluches del Videojuego Sonic',
-    info: 'Descubre los peluches del videojuego Sonic, el más conocido erizo azul del mundo gamer',
-    buttonText: 'Ver Peluches Sonic',
+    image: "https://i.pinimg.com/originals/06/05/30/060530efcf3f3cb74277e86496384909.jpg",
+    title: 'Peluches de anime',
+    info: 'Descubre los peluches de varios animes populares como Naruto, One Piece, Totoro y más',
+    buttonText: 'Ver Peluches de Anime',
     buttonVariant: 'primary',
-    path: '/catalog'
-  },
-  {
-    image: "https://w7.pngwing.com/pngs/150/908/png-transparent-monkey-d-luffy-one-piece-roronoa-zoro-portgas-d-ace-animation-one-piece-manga-cartoon-one-piece.png",
-    title: 'Peluches del anime One Piece',
-    info: 'Descubre los peluches del anime más popular del mundo One Piece, donde ocurren épicas aventuras',
-    buttonText: 'Ver Peluches One Piece',
-    buttonVariant: 'primary',
-    path: '/catalog'
+    path: '/catalog?category=anime'
   },
   {
     image: "https://i.etsystatic.com/48087715/r/il/504d35/6357366333/il_570xN.6357366333_ekbp.jpg",
-    title: 'Peluches de la serie The Digital Circus',
-    info: 'Descubre los peluches de la reciente serie The Digital Circus, la cual tiene un misterioso trasfondo',
-    buttonText: 'Ver Peluches The Digital Circus',
+    title: 'Peluches de series en internet',
+    info: 'Descubre los peluches de series populares de internet como The Digital Circus',
+    buttonText: 'Ver Peluches de series en internet',
     buttonVariant: 'primary',
-    path: '/catalog'
-  },
-  {
-    image: "https://i.pinimg.com/736x/ae/34/a5/ae34a52802820d7aa0f48883bf32e133.jpg",
-    title: 'Peluches del videojuego Mario Bros',
-    info: 'Descubre los peluches del icónico videojuego Mario Bros, el famoso fontanero que salva el Reino Champiñón',
-    buttonText: 'Ver Peluches Mario Bros',
-    buttonVariant: 'primary',
-    path: '/catalog'
+    path: '/catalog?category=internet'
   }
 ];
     return (

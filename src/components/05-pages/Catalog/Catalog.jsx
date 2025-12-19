@@ -4,8 +4,18 @@ import { motion } from 'framer-motion'
 import './Catalog.css';
 import PeluchesGrid from '../../03-organisms/PeluchesGrid'
 import peluches from '../../../data/Peluches'
+import { useSearchParams } from 'react-router-dom'
+
+
 export default function Catalog() {
-  return (
+    const [searchParams] = useSearchParams()
+    const category = searchParams.get('category')
+
+    const filteredPeluches = category
+    ? peluches.filter(p => p.category === category)
+    : peluches
+  
+    return (
     <MainLayout>
       <motion.section
         className="catalog-hero"
@@ -15,8 +25,8 @@ export default function Catalog() {
         transition={{ duration: 0.4 }}
       >
         <div className="catalog-content">
-          <h1>Nuestros peluchitos</h1>
-            <PeluchesGrid peluches={peluches} />
+          <h1>{category ? `Peluches de ${category}` : 'Todos nuestros peluches'}</h1>
+            <PeluchesGrid peluches={filteredPeluches} />
         </div>
       </motion.section>
     </MainLayout>
