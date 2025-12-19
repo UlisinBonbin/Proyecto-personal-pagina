@@ -6,7 +6,7 @@ const peluches = [
   { id: 5, nombre: 'Zoro', precio: '$19.990', imagen: 'https://images-cdn.ubuy.co.za/63abfb2b413e5f1e034336d3-one-piece-plush-doll-yurutto-one-piece.jpg', category: 'anime' },
   { id: 6, nombre: 'Den Den Mushi Law', precio: '$14.990', imagen: 'https://meccha-japan.com/583307-large_default/peluche-den-den-mushi-trafalgar-law-one-piece.jpg', category: 'anime' },
   { id: 7, nombre: 'Chopper', precio: '$16.990', imagen: 'https://www.mi-peluche.com/wp-content/uploads/sites/4/2021/10/peluche-mono-chopper-de-one-piece.png', category: 'anime' },
-  { id: 8, nombre: 'Winton Overwatch', precio: '$13.990', imagen: 'https://m.media-amazon.com/images/I/416gr5R0fdL._AC_UF894,1000_QL80_.jpg', category: 'videojuegos' },
+  { id: 8, nombre: 'Winton Overwat', precio: '$13.990', imagen: 'https://m.media-amazon.com/images/I/416gr5R0fdL._AC_UF894,1000_QL80_.jpg', category: 'videojuegos' },
   { id: 9, nombre: 'Mario', precio: '$17.990', imagen: 'https://gcjuegos.cl/1068-large_default/peluche-mario-bros-plush-14.jpg', category: 'videojuegos' },
   { id: 10, nombre: 'Luigi', precio: '$17.990', imagen: 'https://m.media-amazon.com/images/I/61V9zKFuZpL._AC_SL1361_.jpg', category: 'videojuegos' },
   { id: 11, nombre: 'Peach felina', precio: '$17.990', imagen: 'https://i.pinimg.com/736x/c5/c3/28/c5c3285e342453e4ce7da908178e3e96.jpg', category: 'videojuegos' },
@@ -16,7 +16,14 @@ const peluches = [
   { id: 15, nombre: 'Tifa', precio: '$17.990', imagen: 'https://m.media-amazon.com/images/I/51GQsYFGO+L._AC_UF894,1000_QL80_.jpg', category: 'videojuegos' },
   { id: 16, nombre: 'Sonic', precio: '$17.990', imagen: 'https://m.media-amazon.com/images/I/51rPCDwoSSL._AC_SL1001_.jpg', category: 'videojuegos' },
   { id: 17, nombre: 'Tails drogado', precio: '$17.990', imagen: 'https://dcdn-us.mitiendanube.com/stores/001/889/282/products/diseno-sin-titulo-301-0eac151009c651438016519452214431-1024-1024.png', category: 'videojuegos' },
-  { id: 18, nombre: 'Shadow', precio: '$17.990', imagen: 'https://m.media-amazon.com/images/I/61O-w+mLyNL._AC_UF894,1000_QL80_.jpg', category: 'videojuegos' }
+  { id: 18, nombre: 'Shadow', precio: '$17.990', imagen: 'https://m.media-amazon.com/images/I/61O-w+mLyNL._AC_UF894,1000_QL80_.jpg', category: 'videojuegos' },
+  { id: 19, nombre: 'King', precio: '$17.990', imagen: 'https://m.media-amazon.com/images/I/61dd+zHBfGL._AC_UF894,1000_QL80_.jpg', category: 'internet' },
+  { id: 20, nombre: 'Caine', precio: '$17.990', imagen: 'https://m.media-amazon.com/images/I/61VaFwZPbFL._AC_UF894,1000_QL80_.jpg', category: 'internet' },
+  { id: 21, nombre: 'Jax', precio: '$17.990', imagen: 'https://m.media-amazon.com/images/I/71jKFm8B8NL._AC_UF350,350_QL80_.jpg', category: 'internet' },
+  { id: 22, nombre: 'Whis', precio: '$17.990', imagen: 'https://pelucheuniverse.com/2061-large_default/peluche-dragon-ball-super-whis.jpg', category: 'anime' },
+  { id: 23, nombre: 'Goku', precio: '$17.990', imagen: 'https://m.media-amazon.com/images/I/613A1hPRGuL._AC_UF894,1000_QL80_.jpg', category: 'anime' },
+  { id: 24, nombre: 'Bills', precio: '$17.990', imagen: 'https://m.media-amazon.com/images/I/71j-fkghp3L.jpg', category: 'anime' }
+
 ]
 
 export default peluches
