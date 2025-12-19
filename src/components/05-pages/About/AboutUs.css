@@ -6,7 +6,6 @@
   justify-content: flex-start; /* arriba */
   align-items: center;         /* centro horizontal */
 
-  min-height: calc(100vh - 72px);
   padding-top: 40px;
 
   background-image: url('https://png.pngtree.com/background/20211215/original/pngtree-abstract-light-blue-background-picture-image_1459673.jpg');

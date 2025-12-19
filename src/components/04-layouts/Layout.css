@@ -6,3 +6,13 @@
     padding: 0 2rem; 
     text-align: center; /* Mantener el centrado de texto si es necesario */
 }
+
+.main-layout {
+  min-height: 100vh;          /* ocupa toda la pantalla */
+  display: flex;
+  flex-direction: column;
+}
+
+.main-content {
+  flex: 1;                    /* empuja el footer hacia abajo */
+}

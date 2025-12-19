@@ -1,17 +1,17 @@
-import React from 'react'
 import Header from '../03-organisms/Header'
 import Footer from '../03-organisms/Footer'
+import './Layout.css'
 
-const MainLayout = ({ children }) => {
+export default function MainLayout({ children }) {
   return (
-    <>
+    <div className="main-layout">
       <Header />
-      <main>
+
+      <main className="main-content">
         {children}
       </main>
-      <Footer /> 
-    </>
+
+      <Footer />
+    </div>
   )
 }
-
-export default MainLayout

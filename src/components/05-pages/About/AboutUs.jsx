@@ -2,6 +2,7 @@ import React from 'react'
 import MainLayout from '../../04-layouts/MainLayout'
 import './AboutUs.css'
 import { motion } from 'framer-motion'
+import ositoPatriarcalImg from '../../../assets/images/others/osito_patriarcal.png'
 
 export default function AboutUs() {
   return (
@@ -18,8 +19,7 @@ export default function AboutUs() {
 
           <div className="about-image">
             <img
-              src="https://static.vecteezy.com/system/resources/thumbnails/073/325/515/small/cute-plush-teddy-bear-with-soft-fur-and-friendly-smile-sitting-on-a-white-background-png.png"
-              alt="Oso Patriarcal"
+              src={ositoPatriarcalImg} alt="Oso Patriarcal"
             />
           </div>
 

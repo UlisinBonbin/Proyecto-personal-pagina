@@ -29,7 +29,7 @@
   justify-content: flex-start; /* arriba */
   align-items: center;         /* centro horizontal */
 
-  min-height: calc(100vh - 72px);
+
   padding-top: 40px;
 }
 
