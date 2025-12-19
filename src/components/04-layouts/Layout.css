@@ -1,11 +1,4 @@
-.content-wrapper {
-    /* Aplicamos aquí el límite de ancho que estaba en #root */
-    max-width: 1280px; 
-    margin: 0 auto;
-    /* Puedes añadir padding si lo necesitas */
-    padding: 0 2rem; 
-    text-align: center; /* Mantener el centrado de texto si es necesario */
-}
+
 
 .main-layout {
   min-height: 100vh;          /* ocupa toda la pantalla */
