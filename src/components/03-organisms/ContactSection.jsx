@@ -8,7 +8,7 @@ export default function ContactSection() {
         { icon: <MdPhone size={30} />, title: 'Teléfono', info: '+56 9777 896 ' },
         {icon: <MdMail size={30} />, title: 'Dirección', info: 'Av. Siempre Viva 742, Springfield' },
         {icon: <MdFacebook size={30} />, title: 'Facebook', info: 'facebook.com/peluchesBonbin' },
-        //Aca van mas contactos si es necesario
+        
         
   ];
     return (
