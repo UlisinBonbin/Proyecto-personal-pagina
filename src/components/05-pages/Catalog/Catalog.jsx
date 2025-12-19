@@ -11,6 +11,12 @@ export default function Catalog() {
     const [searchParams] = useSearchParams()
     const category = searchParams.get('category')
 
+    const formatCategory = (cat) =>
+      cat
+        .replace('_', ' ')
+        .replace(/\b\w/g, l => l.toUpperCase())
+
+
     const filteredPeluches = category
     ? peluches.filter(p => p.category === category)
     : peluches
@@ -25,7 +31,7 @@ export default function Catalog() {
         transition={{ duration: 0.4 }}
       >
         <div className="catalog-content">
-          <h1>{category ? `Peluches de ${category}` : 'Todos nuestros peluches'}</h1>
+          <h1>{category ? `Peluches de ${formatCategory(category)}` : 'Todos nuestros peluches'}</h1>
             <PeluchesGrid peluches={filteredPeluches} />
         </div>
       </motion.section>

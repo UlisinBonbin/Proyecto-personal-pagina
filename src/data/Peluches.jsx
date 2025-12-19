@@ -22,6 +22,7 @@ import jaxImg from '../assets/images/peluches/jax.jpg'
 import whisImg from '../assets/images/peluches/whis.jpg'
 import gokuImg from '../assets/images/peluches/goku.jpg'
 import billsImg from '../assets/images/peluches/bills.jpg'
+import winnieImg from '../assets/images/peluches/winnie.png'
 
 const peluches = [
   { id: 1, nombre: 'Ponmy', precio: '$12.990', imagen: ponmyImg, category: 'internet' },
@@ -47,7 +48,8 @@ const peluches = [
   { id: 21, nombre: 'Jax', precio: '$17.990', imagen: jaxImg, category: 'internet' },
   { id: 22, nombre: 'Whis', precio: '$17.990', imagen: whisImg, category: 'anime' },
   { id: 23, nombre: 'Goku', precio: '$17.990', imagen: gokuImg, category: 'anime' },
-  { id: 24, nombre: 'Bills', precio: '$17.990', imagen: billsImg, category: 'anime' }
+  { id: 24, nombre: 'Bills', precio: '$17.990', imagen: billsImg, category: 'anime' },
+  { id: 25, nombre: 'Pooh', precio: '$17.990', imagen: winnieImg, category: 'peliculas_animadas' }
 ]
 
 export default peluches

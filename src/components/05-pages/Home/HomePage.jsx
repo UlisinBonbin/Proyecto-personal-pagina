@@ -22,7 +22,8 @@ export default function HomePage() {
           <h1>Bienvenido a Peluchitos Bonbin</h1>
           <p>
             Peluchitos Bonbin es una tienda que acaba de surgir, vendemos los mejores
-            peluches relacionados al mundo del anime, videojuegos y series.
+            peluches relacionados al mundo del anime, videojuegos, series y más.
+            ¡Encuentra el peluche perfecto para ti o para regalar a alguien especial!
           </p>
 
           <h2>Nuestros peluchitos más vendidos C:</h2>
