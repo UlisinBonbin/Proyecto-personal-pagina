@@ -7,37 +7,27 @@ import './Login.css';
 export default function Login() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-  const [errores, setErrores] = useState({
-    email: "",
-    password: ""
-  });
+  const [errores, setErrores] = useState({ email: "", password: "" });
 
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    // Reset errores
-    setErrores({ email: "", password: "" });
+    // Validaciones simplificadas
+    const erroresActuales = {
+      email: email.trim() === "" ? "Ingrese su correo." : "",
+      password: password.trim() === "" ? "Ingrese su contraseña." : "",
+    };
 
-    let hasError = false;
-    const nuevosErrores = { email: "", password: "" };
+    const hayErrores = Object.values(erroresActuales).some(msg => msg !== "");
 
-    // Validaciones
-    if (email.trim() === "") {
-      nuevosErrores.email = "Ingrese su correo.";
-      hasError = true;
-    }
-
-    if (password.trim() === "") {
-      nuevosErrores.password = "Ingrese su contraseña.";
-      hasError = true;
-    }
-
-    if (hasError) {
-      setErrores(nuevosErrores);
+    if (hayErrores) {
+      setErrores(erroresActuales);
       return;
     }
 
-    // Aquí iría tu lógica de login real
+    // Si no hay errores
+    setErrores({ email: "", password: "" });
+
     console.log('Email:', email);
     console.log('Password:', password);
     alert("Inicio de sesión exitoso!");

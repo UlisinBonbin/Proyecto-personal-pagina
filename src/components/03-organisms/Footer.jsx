@@ -15,8 +15,8 @@ export default function Footer() {
         <div className="footer-section enlaces">
           <h3>Enlaces útiles</h3>
           <Link to="/">Inicio</Link>
-          <Link to="/about">Sobre nosotros</Link>
-          <Link to="#">Nuestras redes sociales</Link>
+          <Link to="/contact">Contáctanos</Link>
+          <Link to="/faq">Preguntas frecuentes</Link>
         </div>
         <div className="footer-section redes">
           <h3>Síguenos</h3>

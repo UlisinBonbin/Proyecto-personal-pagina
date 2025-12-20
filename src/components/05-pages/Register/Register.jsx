@@ -23,80 +23,33 @@ export default function Register() {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    // Limpiar errores previos
-    setErrores({
-      nombre: "",
-      apellidos: "",
-      direccion: "",
-      email: "",
-      clave1: "",
-      clave2: ""
-    });
+    // Crear objeto de errores directamente
+    const erroresActuales = {
+      nombre: nombre.trim().length < 3 ? "El nombre debe tener al menos 3 caracteres." : "",
+      apellidos: apellidos.trim() === "" ? "Ingrese sus apellidos." : "",
+      direccion: direccion.trim() === "" ? "Ingrese su dirección." : "",
+      email: !email.includes("@") ? "Ingrese un correo válido." : "",
+      clave1: clave1.length < 8 ? "La contraseña debe tener al menos 8 caracteres." : "",
+      clave2: clave1 !== clave2 || clave2 === "" ? "Las contraseñas no coinciden." : ""
+    };
 
-    let error = false;
-    const newErrores = {};
+    // Verificar si hay errores
+    const hayErrores = Object.values(erroresActuales).some(msg => msg !== "");
 
-    if (nombre.length < 3) {
-      newErrores.nombre = "El nombre debe tener al menos 3 caracteres.";
-      error = true;
-    }
-
-    if (apellidos.trim() === "") {
-      newErrores.apellidos = "Ingrese sus apellidos.";
-      error = true;
-    }
-
-    if (direccion.trim() === "") {
-      newErrores.direccion = "Ingrese su dirección.";
-      error = true;
-    }
-
-    if (!email.includes("@")) {
-      newErrores.email = "Ingrese un correo válido.";
-      error = true;
-    }
-
-    if (clave1.length < 8) {
-      newErrores.clave1 = "La contraseña debe tener al menos 8 caracteres.";
-      error = true;
-    }
-
-    if (clave1 !== clave2 || clave2 === "") {
-      newErrores.clave2 = "Las contraseñas no coinciden.";
-      error = true;
-    }
-
-    if (error) {
-      setErrores(newErrores);
+    if (hayErrores) {
+      setErrores(erroresActuales);
       return;
     }
 
     // Si no hay errores, crear usuario
-    const nuevoUsuario = {
-      nombre,
-      apellido: apellidos,
-      correo: email,
-      contrasena: clave1,
-      direccion
-    };
-
+    const nuevoUsuario = { nombre, apellido: apellidos, correo: email, contrasena: clave1, direccion };
     console.log("Nuevo usuario:", nuevoUsuario);
     alert("Cuenta creada exitosamente!");
 
     // Limpiar campos
-    setNombre("");
-    setApellidos("");
-    setDireccion("");
-    setEmail("");
-    setClave1("");
-    setClave2("");
+    setNombre(""); setApellidos(""); setDireccion(""); setEmail(""); setClave1(""); setClave2("");
     setErrores({
-      nombre: "",
-      apellidos: "",
-      direccion: "",
-      email: "",
-      clave1: "",
-      clave2: ""
+      nombre: "", apellidos: "", direccion: "", email: "", clave1: "", clave2: ""
     });
   };
 
@@ -189,20 +142,8 @@ export default function Register() {
               type="button"
               className="btn reset"
               onClick={() => {
-                setNombre("");
-                setApellidos("");
-                setDireccion("");
-                setEmail("");
-                setClave1("");
-                setClave2("");
-                setErrores({
-                  nombre: "",
-                  apellidos: "",
-                  direccion: "",
-                  email: "",
-                  clave1: "",
-                  clave2: ""
-                });
+                setNombre(""); setApellidos(""); setDireccion(""); setEmail(""); setClave1(""); setClave2("");
+                setErrores({ nombre: "", apellidos: "", direccion: "", email: "", clave1: "", clave2: "" });
               }}
             >
               Limpiar campos

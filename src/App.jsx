@@ -8,8 +8,10 @@ import Catalog from './components/05-pages/Catalog/Catalog'
 import Contact from './components/05-pages/Contact/Contact'
 import Login from './components/05-pages/Login/Login'
 import Register from './components/05-pages/Register/Register'
+import Faq from './components/05-pages/Faq/Faq'
 
 import ScrollToTop from './components/ScrollToTop'
+import { ImOpt } from 'react-icons/im'
 
 
 function App() {
@@ -26,6 +28,7 @@ function App() {
           <Route path='/contact' element={<Contact />} />
           <Route path='/login' element={<Login />} />
           <Route path='/register' element={<Register />} />
+          <Route path='/faq' element={<Faq />} />
           </Routes>
         </AnimatePresence>
     </>
