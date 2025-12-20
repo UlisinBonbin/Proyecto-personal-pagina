@@ -7,7 +7,6 @@
   background-color: #f3f3f3;
 }
 
-/* Estilos del formulario */
 .login-form {
   background-color: #fff;
   padding: 2rem;
@@ -21,14 +20,14 @@
   margin-top: -20vh;
 }
 
-/* Título del formulario */
+
 .login-form h2 {
   text-align: center;
   font-size: 1.8rem;
   margin-bottom: 1rem;
 }
 
-/* Labels e inputs */
+
 .login-form label {
   display: flex;
   flex-direction: column;
@@ -51,7 +50,7 @@
   box-shadow: 0 0 0 3px rgba(59,130,246,0.2);
 }
 
-/* Botón */
+
 .login-button {
   margin-top: 1rem;
   padding: 0.7rem;
@@ -65,4 +64,16 @@
 
 .login-button:hover {
   background-color: #2563eb;
+}
+
+.error {
+  color: red;
+  font-weight: bold;
+  font-size: 0.9rem;
+  margin-top: 0.3rem;
+}
+
+.input-error {
+  border-color: red;
+  box-shadow: 0 0 0 3px rgba(255,0,0,0.2);
 }

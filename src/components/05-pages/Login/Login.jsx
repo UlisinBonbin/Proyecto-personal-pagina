@@ -2,16 +2,45 @@ import { motion } from 'framer-motion';
 import MainLayout from '../../04-layouts/MainLayout';
 import React, { useState } from 'react';
 import Button from '../../01-atoms/button/Button';
-import './Login.css'; // Importa tu CSS
+import './Login.css'; 
 
 export default function Login() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const [errores, setErrores] = useState({
+    email: "",
+    password: ""
+  });
 
   const handleSubmit = (e) => {
     e.preventDefault();
+
+    // Reset errores
+    setErrores({ email: "", password: "" });
+
+    let hasError = false;
+    const nuevosErrores = { email: "", password: "" };
+
+    // Validaciones
+    if (email.trim() === "") {
+      nuevosErrores.email = "Ingrese su correo.";
+      hasError = true;
+    }
+
+    if (password.trim() === "") {
+      nuevosErrores.password = "Ingrese su contraseña.";
+      hasError = true;
+    }
+
+    if (hasError) {
+      setErrores(nuevosErrores);
+      return;
+    }
+
+    // Aquí iría tu lógica de login real
     console.log('Email:', email);
     console.log('Password:', password);
+    alert("Inicio de sesión exitoso!");
   };
 
   return (
@@ -32,8 +61,10 @@ export default function Login() {
               type="email"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
-              required
+              placeholder="correo@gmail.com"
+              className={errores.email ? "input-error" : ""}
             />
+            {errores.email && <span className="error">{errores.email}</span>}
           </label>
 
           <label>
@@ -42,8 +73,10 @@ export default function Login() {
               type="password"
               value={password}
               onChange={(e) => setPassword(e.target.value)}
-              required
+              placeholder="micontraseña123"
+              className={errores.password ? "input-error" : ""}
             />
+            {errores.password && <span className="error">{errores.password}</span>}
           </label>
 
           <Button type="submit" className="login-button">
