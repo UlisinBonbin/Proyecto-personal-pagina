@@ -7,6 +7,8 @@ import AboutPage from './components/05-pages/About/AboutUs'
 import Catalog from './components/05-pages/Catalog/Catalog'
 import Contact from './components/05-pages/Contact/Contact'
 import Login from './components/05-pages/Login/Login'
+import Register from './components/05-pages/Register/Register'
+
 import ScrollToTop from './components/ScrollToTop'
 
 
@@ -23,6 +25,7 @@ function App() {
           <Route path='/catalog' element={<Catalog />} />
           <Route path='/contact' element={<Contact />} />
           <Route path='/login' element={<Login />} />
+          <Route path='/register' element={<Register />} />
           </Routes>
         </AnimatePresence>
     </>

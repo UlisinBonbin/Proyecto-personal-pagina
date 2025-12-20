@@ -35,6 +35,9 @@ export default function Header() {
       <Link to="/login">
           <Button variant="primary">Iniciar Sesión</Button>
         </Link>
+      <Link to="/register">
+          <Button variant="primary">Registrarse</Button>
+        </Link>
       </nav>
     </header>
   );
