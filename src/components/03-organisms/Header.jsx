@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 import Button from '../01-atoms/button/Button';
 import './Header.css';
 import logoImg from '../../assets/images//logos/logo_pagina.png';
-
+import { MdShoppingCart } from 'react-icons/md';
 
 export default function Header() {
   return (
@@ -37,6 +37,9 @@ export default function Header() {
         </Link>
       <Link to="/register">
           <Button variant="primary">Registrarse</Button>
+        </Link>
+      <Link to="/cart" className="cart-icon">
+        <MdShoppingCart size={28} /> 
         </Link>
       </nav>
     </header>

@@ -9,9 +9,11 @@ import Contact from './components/05-pages/Contact/Contact'
 import Login from './components/05-pages/Login/Login'
 import Register from './components/05-pages/Register/Register'
 import Faq from './components/05-pages/Faq/Faq'
+import Car from './components/05-pages/Cart/Cart'
+
 
 import ScrollToTop from './components/ScrollToTop'
-import { ImOpt } from 'react-icons/im'
+
 
 
 function App() {
@@ -29,6 +31,7 @@ function App() {
           <Route path='/login' element={<Login />} />
           <Route path='/register' element={<Register />} />
           <Route path='/faq' element={<Faq />} />
+          <Route path='/cart' element={<Car />} />
           </Routes>
         </AnimatePresence>
     </>

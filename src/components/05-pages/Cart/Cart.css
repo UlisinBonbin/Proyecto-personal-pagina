@@ -1,0 +1,25 @@
+.cart-hero {
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 6rem; /* aire antes del footer */
+
+  justify-content: flex-start; /* arriba */
+  align-items: center;         /* centro horizontal */
+
+  padding-top: 40px;
+
+  background-image: url('https://png.pngtree.com/background/20211215/original/pngtree-abstract-light-blue-background-picture-image_1459673.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+
+.cart-hero h1 {
+  text-align: center;     
+         
+}
+
+.title-cart {
+    margin-bottom: 3rem;
+}
