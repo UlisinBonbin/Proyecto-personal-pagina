@@ -3,10 +3,12 @@ import { motion } from 'framer-motion'
 import MainLayout from '../../04-layouts/MainLayout'
 import './HomePage.css'
 import PeluchesGrid from '../../03-organisms/PeluchesGrid'
-import peluches from '../../../data/Peluches'
+import peluches, {peluchesSoon} from '../../../data/Peluches'
 import CategorySection from '../../03-organisms/CategorySection'
 
+
 const destacados = peluches.slice(0, 9);
+const proximamente = peluchesSoon.slice(0,3);
 
 export default function HomePage() {
   return (
@@ -33,6 +35,11 @@ export default function HomePage() {
         <div className="category-peluches">
           <h2>Explora nuestras categorías</h2>
           <CategorySection />
+        </div>
+
+        <div className="peluches-proximamente">
+          <h2>Nuestros proximos peluches que llegarán</h2>
+          <PeluchesGrid peluches = {proximamente} />
         </div>
       </motion.section>
     </MainLayout>

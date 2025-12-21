@@ -23,6 +23,9 @@ import whisImg from '../assets/images/peluches/whis.jpg'
 import gokuImg from '../assets/images/peluches/goku.jpg'
 import billsImg from '../assets/images/peluches/bills.jpg'
 import winnieImg from '../assets/images/peluches/winnie.png'
+import picoroImg from '../assets/images/peluches/picoro.jpg'
+import pikachuImg from '../assets/images/peluches/pikachu.jpg'
+import meowthImg from '../assets/images/peluches/meowth.png'
 
 const peluches = [
   { id: 1, nombre: 'Ponmy', precio: '$12.990', imagen: ponmyImg, category: 'internet' },
@@ -52,4 +55,11 @@ const peluches = [
   { id: 25, nombre: 'Pooh', precio: '$17.990', imagen: winnieImg, category: 'peliculas_animadas' }
 ]
 
+const peluchesSoon =[
+  {id: 1, nombre: 'Picoro', precio: '$14000', imagen: picoroImg, category: 'anime'},
+  {id: 2, nombre: 'Pikachu', precio: '$14000', imagen: pikachuImg, category: 'videojuegos'},
+  {id: 3, nombre: 'Meowth', precio: '$15000', imagen: meowthImg, category: 'videojuegos'}
+]
+
 export default peluches
+export { peluchesSoon }
