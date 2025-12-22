@@ -1,3 +1,4 @@
+
 * {
   box-sizing: border-box;
 }
@@ -5,7 +6,7 @@
 body {
   margin: 0;
   min-height: 100vh;
-  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+  font-family: 'Nunito', sans-serif;
   line-height: 1.5;
   background-color: #ffffff;
 }
@@ -16,4 +17,23 @@ body {
 
 html {
   overflow-y: scroll;
+}
+
+
+/* Títulos */
+h1, h2, h3 {
+  font-family: 'Baloo 2', cursive;
+  font-weight: 600;
+}
+
+/* Texto normal */
+p {
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+/* Links */
+a {
+  text-decoration: none;
+  color: inherit;
 }

@@ -28,37 +28,36 @@ import pikachuImg from '../assets/images/peluches/pikachu.jpg'
 import meowthImg from '../assets/images/peluches/meowth.png'
 
 const peluches = [
-  { id: 1, nombre: 'Ponmy', precio: '$12.990', imagen: ponmyImg, category: 'internet' },
-  { id: 2, nombre: 'Totoro', precio: '$18.990', imagen: totoroImg, category: 'anime' },
-  { id: 3, nombre: 'Ralsei', precio: '$15.990', imagen: ralseiImg, category: 'videojuegos' },
-  { id: 4, nombre: 'Luffy', precio: '$22.990', imagen: luffyImg, category: 'anime' },
-  { id: 5, nombre: 'Zoro', precio: '$19.990', imagen: zoroImg, category: 'anime' },
-  { id: 6, nombre: 'Den Den Mushi Law', precio: '$14.990', imagen: lawImg, category: 'anime' },
-  { id: 7, nombre: 'Chopper', precio: '$16.990', imagen: chopperImg, category: 'anime' },
-  { id: 8, nombre: 'Winton Overwat', precio: '$13.990', imagen: winstonImg, category: 'videojuegos' },
-  { id: 9, nombre: 'Mario', precio: '$17.990', imagen: marioImg, category: 'videojuegos' },
-  { id: 10, nombre: 'Luigi', precio: '$17.990', imagen: luigiImg, category: 'videojuegos' },
-  { id: 11, nombre: 'Peach felina', precio: '$17.990', imagen: peachImg, category: 'videojuegos' },
-  { id: 12, nombre: 'Cloud Strife', precio: '$17.990', imagen: cloudImg, category: 'videojuegos' },
-  { id: 13, nombre: 'Sephirot', precio: '$17.990', imagen: sephirotImg, category: 'videojuegos' },
-  { id: 14, nombre: 'Aerith', precio: '$17.990', imagen: aerithImg, category: 'videojuegos' },
-  { id: 15, nombre: 'Tifa', precio: '$17.990', imagen: tifaImg, category: 'videojuegos' },
-  { id: 16, nombre: 'Sonic', precio: '$17.990', imagen: sonicImg, category: 'videojuegos' },
-  { id: 17, nombre: 'Tails drogado', precio: '$17.990', imagen: tailsImg, category: 'videojuegos' },
-  { id: 18, nombre: 'Shadow', precio: '$17.990', imagen: shadowImg, category: 'videojuegos' },
-  { id: 19, nombre: 'King', precio: '$17.990', imagen: kingImg, category: 'internet' },
-  { id: 20, nombre: 'Caine', precio: '$17.990', imagen: caineImg, category: 'internet' },
-  { id: 21, nombre: 'Jax', precio: '$17.990', imagen: jaxImg, category: 'internet' },
-  { id: 22, nombre: 'Whis', precio: '$17.990', imagen: whisImg, category: 'anime' },
-  { id: 23, nombre: 'Goku', precio: '$17.990', imagen: gokuImg, category: 'anime' },
-  { id: 24, nombre: 'Bills', precio: '$17.990', imagen: billsImg, category: 'anime' },
-  { id: 25, nombre: 'Pooh', precio: '$17.990', imagen: winnieImg, category: 'peliculas_animadas' }
+  { id: 1, name: 'Ponmy', price: 12990, image: ponmyImg, category: 'internet' },
+  { id: 2, name: 'Totoro', price: 18990, image: totoroImg, category: 'anime' },
+  { id: 3, name: 'Ralsei', price: 15990, image: ralseiImg, category: 'videojuegos' },
+  { id: 4, name: 'Luffy', price: 22990, image: luffyImg, category: 'anime' },
+  { id: 5, name: 'Zoro', price: 19990, image: zoroImg, category: 'anime' },
+  { id: 6, name: 'Den Den Mushi Law', price: 14990, image: lawImg, category: 'anime' },
+  { id: 7, name: 'Chopper', price: 16990, image: chopperImg, category: 'anime' },
+  { id: 8, name: 'Winton Overwat', price: 13990, image: winstonImg, category: 'videojuegos' },
+  { id: 9, name: 'Mario', price: 17990, image: marioImg, category: 'videojuegos' },
+  { id: 10, name: 'Luigi', price: 17990, image: luigiImg, category: 'videojuegos' },
+  { id: 11, name: 'Peach Felina', price: 17990, image: peachImg, category: 'videojuegos' },
+  { id: 12, name: 'Cloud Strife', price: 17990, image: cloudImg, category: 'videojuegos' },
+  { id: 13, name: 'Sephirot', price: 17990, image: sephirotImg, category: 'videojuegos' },
+  { id: 14, name: 'Aerith', price: 17990, image: aerithImg, category: 'videojuegos' },
+  { id: 15, name: 'Tifa', price: 17990, image: tifaImg, category: 'videojuegos' },
+  { id: 16, name: 'Sonic', price: 17990, image: sonicImg, category: 'videojuegos' },
+  { id: 17, name: 'Tails drogado', price: 17990, image: tailsImg, category: 'videojuegos' },
+  { id: 18, name: 'Shadow', price: 17990, image: shadowImg, category: 'videojuegos' },
+  { id: 19, name: 'King', price: 17990, image: kingImg, category: 'internet' },
+  { id: 20, name: 'Caine', price: 17990, image: caineImg, category: 'internet' },
+  { id: 21, name: 'Jax', price: 17990, image: jaxImg, category: 'internet' },
+  { id: 22, name: 'Whis', price: 17990, image: whisImg, category: 'anime' },
+  { id: 23, name: 'Goku', price: 17990, image: gokuImg, category: 'anime' },
+  { id: 24, name: 'Bills', price: 17990, image: billsImg, category: 'anime' },
+  { id: 25, name: 'Pooh', price: 17990, image: winnieImg, category: 'peliculas_animadas' }
 ]
-
 const peluchesSoon =[
-  {id: 1, nombre: 'Picoro', precio: '$14000', imagen: picoroImg, category: 'anime'},
-  {id: 2, nombre: 'Pikachu', precio: '$14000', imagen: pikachuImg, category: 'videojuegos'},
-  {id: 3, nombre: 'Meowth', precio: '$15000', imagen: meowthImg, category: 'videojuegos'}
+  {id: 1, name: 'Picoro', price: 14000, image: picoroImg, category: 'anime', canBuy: false},
+  {id: 2, name: 'Pikachu', price: 14000, image: pikachuImg, category: 'videojuegos', canBuy: false},
+  {id: 3, name: 'Meowth', price: 15000, image: meowthImg, category: 'videojuegos', canBuy: false}
 ]
 
 export default peluches
