@@ -1,6 +1,7 @@
 import React from 'react'
 import './PelucheCard.css'
 import { addToCart } from '../../utils/cart'
+import Button from '../01-atoms/button/Button';
 
 export default function PelucheCard({ id, image, name, price, canBuy= true }) {
   const handleAddToCart = () => {
@@ -13,10 +14,11 @@ export default function PelucheCard({ id, image, name, price, canBuy= true }) {
       <h3 className="peluche-nombre">{name}</h3>
       <span className="peluche-precio">${price}</span>
       {canBuy && (
-      <button onClick={handleAddToCart}>
+      <Button onClick={handleAddToCart}>
         Agregar al carrito
-      </button>
+      </Button>
 )}
     </div>
   )
 }
+ <Button variant="secondary">Inicio</Button>
