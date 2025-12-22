@@ -13,12 +13,9 @@ export default function Cart() {
         transition={{ duration: 0.4 }}
       >
         <div className="cart-content">
-            <div className="title-cart">
-                <h1>Tu carrito</h1>
-            </div>
-            <div className="separator">
-              <h1></h1>
-            </div>
+             <div className="title-cart">
+                <h1>Tu carrito</h1>            
+              </div>
         </div>
       </motion.section>
     </MainLayout>
