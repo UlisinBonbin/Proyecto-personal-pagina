@@ -21,7 +21,7 @@
   height: 40px;
   width: auto;
   cursor: pointer;
-  transform: translateY(5px); /*Para mover el logo en el eje Y*/
+  transform: translateY(5px); /*Para mover el logo dependiendo del eje/
 }
 
 .header-logo img {
@@ -31,3 +31,7 @@
   transform: translateY(5px);
 }
 
+.cart-icon {
+  transform: translateY(5.5px) translateX(310px); 
+
+}
