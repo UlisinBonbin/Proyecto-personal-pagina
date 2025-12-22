@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import MainLayout from '../../04-layouts/MainLayout'
 import { motion } from 'framer-motion'
-import { getCart } from '../../../utils/cart'
+import { getCart, cleanCart } from '../../../utils/cart'
 import './Cart.css';
 export default function Cart() {
   const [cartItems, setCartItems] = useState([])
@@ -9,6 +9,12 @@ export default function Cart() {
   useEffect(() => {
     setCartItems(getCart())
   }, [])
+
+const handleClearCart = () => {
+  cleanCart()
+  setCartItems([])
+}
+
   return (
     <MainLayout>
         <motion.section
@@ -35,6 +41,11 @@ export default function Cart() {
               </div>
             ))
           )}
+           {cartItems.length > 0 && (
+              <button className="clear-cart-btn" onClick={handleClearCart}>
+                Vaciar carrito
+              </button>
+              )}
         </div>
       </motion.section>
     </MainLayout>

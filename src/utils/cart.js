@@ -26,3 +26,7 @@ export const addToCart = (product) => {
 
   saveCart(cart)
 }
+
+export const cleanCart =()=>{
+  localStorage.removeItem('cart')
+}
