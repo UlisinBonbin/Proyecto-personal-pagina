@@ -3,6 +3,7 @@ import MainLayout from '../../04-layouts/MainLayout'
 import { motion } from 'framer-motion'
 import { getCart, cleanCart } from '../../../utils/cart'
 import './Cart.css';
+import Button from '../../01-atoms/button/Button';
 export default function Cart() {
   const [cartItems, setCartItems] = useState([])
 
@@ -42,9 +43,11 @@ const handleClearCart = () => {
             ))
           )}
            {cartItems.length > 0 && (
-              <button className="clear-cart-btn" onClick={handleClearCart}>
+              <Button
+                variant="secondary"
+                onClick={handleClearCart}>
                 Vaciar carrito
-              </button>
+              </Button>
               )}
         </div>
       </motion.section>
