@@ -13,11 +13,3 @@ export default function PeluchesGrid({peluches}) {
   )
 }
 
-//Props = información que le pasas a un componente para que sepa qué mostrar
-
-//peluches → array de datos
-//ap → recorre el array
-//p → un peluche
-//<PelucheCard /> → crea una card
-//key={p.id} → solo para React
-//{...p} → pasa TODAS las propiedades como props

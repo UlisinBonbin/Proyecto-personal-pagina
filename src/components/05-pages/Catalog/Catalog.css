@@ -1,29 +1,111 @@
 .catalog-hero {
-  background-image: url('https://wallpapers.com/images/featured/pastel-ipad-9z1oc9q732wysodb.jpg');
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
+    min-height: 100vh;
+
+    background-image: url('https://wallpapers.com/images/featured/pastel-ipad-9z1oc9q732wysodb.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+
+    padding: 40px 20px 6rem;
+    box-sizing: border-box;
 }
 
 .catalog-hero h1 {
-  text-align: center;            
+    text-align: center;
+    margin: 0 0 40px;
 }
 
 .catalog-content {
-   max-width: 1100px;   /* ancho cómodo de lectura */
-    margin: 0 auto; 
+    max-width: 1100px;
+    margin: 0 auto;
+
     display: flex;
-  flex-direction: column;
-  padding-bottom: 6rem; /* aire antes del footer */
-
-  justify-content: flex-start; /* arriba */
-  align-items: center;         /* centro horizontal */
-
-  padding-top: 40px;    /* lo centra */
+    flex-direction: column;
+    align-items: center;
 }
 
+/* Cuadrícula de productos */
+.products-grid {
+    width: 100%;
 
-.catalog-hero p {
-  text-align: center;
-  text-align: justify;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 25px;
 }
+
+/* Tarjeta de cada producto */
+.product-card {
+    background: rgba(255, 255, 255, 0.92);
+    border-radius: 16px;
+    padding: 15px;
+
+    text-align: center;
+
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.12);
+
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.product-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 24px rgba(0, 0, 0, 0.18);
+}
+
+/* Imagen */
+.product-card img {
+    width: 100%;
+    height: 250px;
+
+    object-fit: cover;
+    border-radius: 12px;
+
+    display: block;
+}
+
+/* Nombre */
+.product-card h2 {
+    margin: 15px 0 8px;
+    font-size: 1.2rem;
+}
+
+/* Precio */
+.product-card p {
+    margin: 0;
+    font-size: 1.05rem;
+    font-weight: bold;
+}
+
+/* Adaptación para pantallas pequeñas */
+@media (max-width: 600px) {
+    .catalog-hero {
+        padding: 30px 15px 5rem;
+    }
+
+    .catalog-content {
+        max-width: 100%;
+    }
+
+    .products-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 15px;
+    }
+
+    .product-card {
+        padding: 10px;
+    }
+
+    .product-card img {
+        height: 180px;
+    }
+
+    .product-card h2 {
+        font-size: 1rem;
+    }
+
+    .product-card p {
+        font-size: 0.95rem;
+    }
+}
+
