@@ -89,21 +89,6 @@ export default function HomePage() {
                             </p>
                         )}
 
-                        {!auth.isLoading && !auth.isAuthenticated && (
-                            <div>
-                                <p>
-                                    ¿Aún no tienes cuenta o no has iniciado sesión?
-                                </p>
-
-                                <button
-                                    className="btn-login"
-                                    onClick={() => auth.signinRedirect()}
-                                >
-                                    Iniciar sesión
-                                </button>
-                            </div>
-                        )}
-
                         {auth.isAuthenticated && (
                             <div>
                                 <h2>

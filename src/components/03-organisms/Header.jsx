@@ -4,8 +4,10 @@ import Button from '../01-atoms/button/Button';
 import './Header.css';
 import logoImg from '../../assets/images//logos/logo_pagina.png';
 import { MdShoppingCart } from 'react-icons/md';
+import { useAuth } from "react-oidc-context";
 
 export default function Header() {
+  const auth = useAuth();
   return (
     <header className="header-container">
 
@@ -29,15 +31,13 @@ export default function Header() {
           <Button variant="secondary">Nosotros</Button>
         </Link>
 
-       <Link to="/contact">
-          <Button variant="secondary">Contacto</Button>
-        </Link>
-      <Link to="/login">
-          <Button variant="primary">Iniciar Sesión</Button>
-        </Link>
-      <Link to="/register">
-          <Button variant="primary">Registrarse</Button>
-        </Link>
+        <Button
+            variant="primary"
+            onClick={() => auth.signinRedirect()}
+        >
+            Iniciar sesión
+        </Button>
+      
       <Link to="/cart" className="cart-icon">
         <MdShoppingCart size={28} /> 
         </Link>
