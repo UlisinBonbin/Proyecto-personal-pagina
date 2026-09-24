@@ -30,6 +30,16 @@
   background-color: #ecf6fc;
 }
 
+/* Variante danger */
+.btn-danger {
+  background-color: #e74c3c;
+  color: white;
+}
+
+.btn-danger:hover {
+  background-color: #c0392b;
+}
+
 /* Efecto al hacer click */
 .btn:active {
   transform: scale(0.97);

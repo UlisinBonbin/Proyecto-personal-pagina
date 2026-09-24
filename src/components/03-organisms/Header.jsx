@@ -1,6 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import Button from '../01-atoms/button/Button';
+import Button from '../01-atoms/Button';
 import './Header.css';
 import logoImg from '../../assets/images//logos/logo_pagina.png';
 import { MdShoppingCart } from 'react-icons/md';
@@ -29,6 +29,10 @@ export default function Header() {
 
         <Link to="/about">
           <Button variant="secondary">Nosotros</Button>
+        </Link>
+
+        <Link to="/control-panel">
+          <Button variant="secondary">Panel de Control</Button>
         </Link>
 
         <Button

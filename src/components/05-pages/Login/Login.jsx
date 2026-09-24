@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion';
 import MainLayout from '../../04-layouts/MainLayout';
 import React, { useState } from 'react';
-import Button from '../../01-atoms/button/Button';
+import Button from '../../01-atoms/Button';
 import './Login.css'; 
 
 export default function Login() {

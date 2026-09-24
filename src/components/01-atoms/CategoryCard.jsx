@@ -1,6 +1,6 @@
 import React from 'react'
 import './CategoryCard.css'
-import Button from '../01-atoms/button/Button';
+import Button from './Button';
 import { useNavigate } from 'react-router-dom'
 
 export default function CategoryCard({ image, title, info, buttonText,

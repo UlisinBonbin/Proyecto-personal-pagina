@@ -1,7 +1,7 @@
 import React from 'react'
 import './PelucheCard.css'
 import { addToCart } from '../../utils/cart'
-import Button from '../01-atoms/button/Button';
+import Button from '../01-atoms/Button';
 
 export default function PelucheCard({ id, image, name, price, canBuy= true }) {
   const handleAddToCart = () => {

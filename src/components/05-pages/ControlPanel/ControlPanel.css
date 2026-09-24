@@ -1,0 +1,120 @@
+.control-panel-hero {
+  min-height: 100vh;
+  background-image: url('https://wallpapers.com/images/featured/pastel-ipad-9z1oc9q732wysodb.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  padding: 40px 20px 6rem;
+  box-sizing: border-box;
+}
+
+.control-panel-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.control-panel-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 15px;
+  background: rgba(255, 255, 255, 0.95);
+  padding: 20px 25px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.control-panel-header h1 {
+  margin: 0;
+  font-size: 1.8rem;
+  color: #333;
+}
+
+.operation-message {
+  padding: 12px 20px;
+  border-radius: 8px;
+  font-weight: 500;
+  animation: slideIn 0.3s ease;
+}
+
+.operation-message.success {
+  background-color: #d4edda;
+  color: #155724;
+  border: 1px solid #c3e6cb;
+}
+
+.operation-message.error {
+  background-color: #f8d7da;
+  color: #721c24;
+  border: 1px solid #f5c6cb;
+}
+
+.error-message {
+  padding: 12px 20px;
+  background-color: #f8d7da;
+  color: #721c24;
+  border-radius: 8px;
+  border: 1px solid #f5c6cb;
+}
+
+.delete-confirm-content {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.delete-confirm-content p {
+  margin: 0;
+  color: #333;
+}
+
+.warning-text {
+  color: #e74c3c;
+  font-weight: 500;
+}
+
+.delete-confirm-actions {
+  display: flex;
+  gap: 10px;
+  justify-content: flex-end;
+  margin-top: 10px;
+}
+
+.delete-confirm-actions button {
+  min-width: 100px;
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 768px) {
+  .control-panel-hero {
+    padding: 30px 15px 5rem;
+  }
+
+  .control-panel-header {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .control-panel-header h1 {
+    font-size: 1.4rem;
+    text-align: center;
+  }
+
+  .control-panel-header button {
+    width: 100%;
+  }
+}

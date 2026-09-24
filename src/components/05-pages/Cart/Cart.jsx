@@ -3,7 +3,7 @@ import MainLayout from '../../04-layouts/MainLayout'
 import { motion } from 'framer-motion'
 import { getCart, cleanCart } from '../../../utils/cart'
 import './Cart.css';
-import Button from '../../01-atoms/button/Button';
+import Button from '../../01-atoms/Button';
 export default function Cart() {
   const [cartItems, setCartItems] = useState([])
 
