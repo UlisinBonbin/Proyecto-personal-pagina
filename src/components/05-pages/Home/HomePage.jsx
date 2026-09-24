@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 import MainLayout from "../../04-layouts/MainLayout";
 import "./HomePage.css";
 import { useAuth } from "react-oidc-context";
+import { useEffect } from "react";
 
 const clientId = "1oncqn9ke80cbq41f3irnqtsk4";
 
