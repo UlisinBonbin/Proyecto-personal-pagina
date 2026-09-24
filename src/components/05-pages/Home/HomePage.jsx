@@ -13,6 +13,33 @@ const cognitoDomain =
 export default function HomePage() {
     const auth = useAuth();
 
+
+    useEffect(() => {
+    const cargarUsuario = async () => {
+        if (!auth.isAuthenticated || !auth.user?.access_token) {
+            return;
+        }
+
+        const response = await fetch(
+            `${import.meta.env.VITE_API_URL}/api/v1/usuarios/me`,
+            {
+                headers: {
+                    Authorization: `Bearer ${auth.user.access_token}`,
+                },
+            }
+        );
+
+        const data = await response.json();
+
+        console.log("Usuario desde backend:", data);
+    };
+
+    cargarUsuario();
+}, [auth.isAuthenticated, auth.user]);
+
+
+
+
     const signOutRedirect = async () => {
         await auth.removeUser();
 
