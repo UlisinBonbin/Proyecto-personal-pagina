@@ -11,6 +11,7 @@ import Register from './components/05-pages/Register/Register'
 import Faq from './components/05-pages/Faq/Faq'
 import Car from './components/05-pages/Cart/Cart'
 import ControlPanel from './components/05-pages/ControlPanel/ControlPanel'
+import OperadorPanel from './components/05-pages/OperadorPanel/OperadorPanel'
 
 
 import ScrollToTop from './components/ScrollToTop'
@@ -34,6 +35,8 @@ function App() {
           <Route path='/faq' element={<Faq />} />
           <Route path='/cart' element={<Car />} />
           <Route path='/control-panel' element={<ControlPanel />} />
+          <Route path='/operador-panel' element={<OperadorPanel />} />
+          
           </Routes>
         </AnimatePresence>
     </>

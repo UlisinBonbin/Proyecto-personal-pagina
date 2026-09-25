@@ -3,6 +3,7 @@ import MainLayout from "../../04-layouts/MainLayout";
 import "./HomePage.css";
 import { useAuth } from "react-oidc-context";
 import { useEffect } from "react";
+import { Link } from "react-router-dom";
 
 const clientId = "1oncqn9ke80cbq41f3irnqtsk4";
 
@@ -14,33 +15,62 @@ const cognitoDomain =
 export default function HomePage() {
     const auth = useAuth();
 
+    /*
+     * Obtener grupos de Cognito
+     */
+    const grupos = auth.user?.profile?.["cognito:groups"] || [];
 
+    const isAdmin = Array.isArray(grupos)
+        ? grupos.includes("ADMINISTRADOR")
+        : grupos === "ADMINISTRADOR";
+    
+
+    const isOperator = Array.isArray(grupos)
+        ? grupos.includes("OPERADOR")
+        : grupos === "OPERADOR";
+
+    /*
+     * Obtener información del usuario desde usuario-service
+     */
     useEffect(() => {
-    const cargarUsuario = async () => {
-        if (!auth.isAuthenticated || !auth.user?.access_token) {
-            return;
-        }
-
-        const response = await fetch(
-            `${import.meta.env.VITE_API_URL}/api/v1/usuarios/me`,
-            {
-                headers: {
-                    Authorization: `Bearer ${auth.user.access_token}`,
-                },
+        const cargarUsuario = async () => {
+            if (!auth.isAuthenticated || !auth.user?.access_token) {
+                return;
             }
-        );
 
-        const data = await response.json();
+            try {
+                const response = await fetch(
+                    `${import.meta.env.VITE_API_URL}/api/v1/usuarios/me`,
+                    {
+                        headers: {
+                            Authorization: `Bearer ${auth.user.access_token}`,
+                        },
+                    }
+                );
 
-        console.log("Usuario desde backend:", data);
-    };
+                if (!response.ok) {
+                    throw new Error(
+                        `Error HTTP: ${response.status}`
+                    );
+                }
 
-    cargarUsuario();
-}, [auth.isAuthenticated, auth.user]);
+                const data = await response.json();
 
+                console.log("Usuario desde backend:", data);
+            } catch (error) {
+                console.error(
+                    "Error obteniendo usuario:",
+                    error
+                );
+            }
+        };
 
+        cargarUsuario();
+    }, [auth.isAuthenticated, auth.user]);
 
-
+    /*
+     * Cerrar sesión
+     */
     const signOutRedirect = async () => {
         await auth.removeUser();
 
@@ -52,6 +82,7 @@ export default function HomePage() {
 
     return (
         <MainLayout>
+
             <motion.section
                 className="home-hero"
                 initial={{ opacity: 0, y: 20 }}
@@ -59,9 +90,12 @@ export default function HomePage() {
                 exit={{ opacity: 0, y: -20 }}
                 transition={{ duration: 0.4 }}
             >
+
                 <div className="hero-content">
 
-                    <h1>Bienvenido a Peluchitos Bonbin</h1>
+                    <h1>
+                        Bienvenido a Peluchitos Bonbin
+                    </h1>
 
                     <p>
                         Peluchitos Bonbin es una tienda que acaba de surgir.
@@ -80,19 +114,26 @@ export default function HomePage() {
                     >
 
                         {auth.isLoading && (
-                            <p>Cargando sesión...</p>
+                            <p>
+                                Cargando sesión...
+                            </p>
                         )}
 
                         {auth.error && (
                             <p>
-                                Error al iniciar sesión: {auth.error.message}
+                                Error al iniciar sesión:{" "}
+                                {auth.error.message}
                             </p>
                         )}
 
                         {auth.isAuthenticated && (
                             <div>
+
                                 <h2>
-                                    ¡Hola, {auth.user?.profile?.email}!
+                                    ¡Hola,{" "}
+                                    {auth.user?.profile?.email ||
+                                        "usuario"}
+                                    !
                                 </h2>
 
                                 <button
@@ -101,13 +142,44 @@ export default function HomePage() {
                                 >
                                     Cerrar sesión
                                 </button>
+
+                                {isAdmin && (
+                                    <div
+                                        style={{
+                                            marginTop: "1rem"
+                                        }}
+                                    >
+                                        <Link to="/control-panel">
+                                            <button className="btn-admin-panel">
+                                                Panel de Administración
+                                            </button>
+                                        </Link>
+                                    </div>
+                                )}
+                                {isOperator && (
+                                    <div
+                                        style={{
+                                            marginTop: "1rem"
+                                        }}
+                                    >
+                                        <Link to="/operador-panel">
+                                            <button className="btn-operator-panel">
+                                                Panel de Operador
+                                            </button>
+                                        </Link>
+                                    </div>
+                                )}
+
+
                             </div>
                         )}
 
                     </div>
 
                 </div>
+
             </motion.section>
+
         </MainLayout>
     );
 }
