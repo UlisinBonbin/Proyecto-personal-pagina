@@ -7,9 +7,9 @@ import { AuthProvider } from "react-oidc-context";
 
 const cognitoAuthConfig = {
     authority:
-        "https://cognito-idp.us-east-1.amazonaws.com/us-east-1_F7SREFccO",
+        "https://cognito-idp.us-east-1.amazonaws.com/us-east-1_CyjaY1PiB",
 
-    client_id: "1oncqn9ke80cbq41f3irnqtsk4",
+    client_id: "2a2sg471b8vu4h7dt49h65k3e9",
 
     redirect_uri: "http://localhost:5173",
 

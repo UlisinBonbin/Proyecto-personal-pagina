@@ -104,14 +104,7 @@ export default function Catalog() {
                                             className="product-card"
                                             key={producto.id}
                                         >
-                                            <img
-                                                src={
-                                                    producto.imagenUrl
-                                                }
-                                                alt={
-                                                    producto.nombre
-                                                }
-                                            />
+                                            <img src={producto.imagenUrl} alt={producto.nombre} />
 
                                             <h2>
                                                 {

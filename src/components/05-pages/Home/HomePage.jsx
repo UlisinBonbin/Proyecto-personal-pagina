@@ -5,12 +5,13 @@ import { useAuth } from "react-oidc-context";
 import { useEffect } from "react";
 import { Link } from "react-router-dom";
 
-const clientId = "1oncqn9ke80cbq41f3irnqtsk4";
+const clientId = import.meta.env.VITE_COGNITO_CLIENT_ID;
 
-const logoutUri = "http://localhost:5173";
+const logoutUri =
+    import.meta.env.VITE_COGNITO_LOGOUT_URI ||
+    window.location.origin;
 
-const cognitoDomain =
-    "https://us-east-1f7srefcco.auth.us-east-1.amazoncognito.com";
+const cognitoDomain = import.meta.env.VITE_COGNITO_DOMAIN;
 
 export default function HomePage() {
     const auth = useAuth();
@@ -72,13 +73,24 @@ export default function HomePage() {
      * Cerrar sesión
      */
     const signOutRedirect = async () => {
-        await auth.removeUser();
+    await auth.removeUser();
 
-        window.location.href =
-            `${cognitoDomain}/logout` +
-            `?client_id=${clientId}` +
-            `&logout_uri=${encodeURIComponent(logoutUri)}`;
-    };
+    if (!clientId || !cognitoDomain) {
+        console.error(
+            "Falta configurar el dominio o el App Client de Cognito."
+        );
+        return;
+    }
+
+    const domain = cognitoDomain.replace(/\/$/, "");
+
+    const logoutUrl =
+        `${domain}/logout` +
+        `?client_id=${encodeURIComponent(clientId)}` +
+        `&logout_uri=${encodeURIComponent(logoutUri)}`;
+
+    window.location.href = logoutUrl;
+};
 
     return (
         <MainLayout>

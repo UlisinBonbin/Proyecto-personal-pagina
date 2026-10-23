@@ -1,79 +1,70 @@
-import { motion } from 'framer-motion';
-import MainLayout from '../../04-layouts/MainLayout';
-import React, { useState } from 'react';
-import Button from '../../01-atoms/Button';
-import './Login.css'; 
+import { motion } from "framer-motion";
+import { useState } from "react";
+import { useAuth } from "react-oidc-context";
+
+import MainLayout from "../../04-layouts/MainLayout";
+import "./Login.css";
 
 export default function Login() {
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
-  const [errores, setErrores] = useState({ email: "", password: "" });
+    const auth = useAuth();
+    const [loginError, setLoginError] = useState("");
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
+    const handleLogin = async () => {
+        setLoginError("");
 
-    // Validaciones simplificadas
-    const erroresActuales = {
-      email: email.trim() === "" ? "Ingrese su correo." : "",
-      password: password.trim() === "" ? "Ingrese su contraseña." : "",
+        try {
+            await auth.signinRedirect();
+        } catch (error) {
+            console.error("Error al iniciar sesión:", error);
+
+            setLoginError(
+                error.message || "No se pudo iniciar sesión."
+            );
+        }
     };
 
-    const hayErrores = Object.values(erroresActuales).some(msg => msg !== "");
+    return (
+        <MainLayout>
+            <motion.section
+                className="login-hero"
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -20 }}
+                transition={{ duration: 0.4 }}
+            >
+                <div className="login-form">
+                    <h2>Iniciar sesión</h2>
 
-    if (hayErrores) {
-      setErrores(erroresActuales);
-      return;
-    }
+                    <p>
+                        Inicia sesión con tu cuenta de Peluchitos Bonbin.
+                    </p>
 
-    // Si no hay errores
-    setErrores({ email: "", password: "" });
+                    {auth.isLoading && (
+                        <p>Conectando con Cognito...</p>
+                    )}
 
-    console.log('Email:', email);
-    console.log('Password:', password);
-    alert("Inicio de sesión exitoso!");
-  };
+                    {auth.error && (
+                        <p className="error">
+                            Error de autenticación: {auth.error.message}
+                        </p>
+                    )}
 
-  return (
-    <MainLayout>
-      <motion.section
-        className="login-hero"
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        exit={{ opacity: 0, y: -20 }}
-        transition={{ duration: 0.4 }}
-      >
-        <form onSubmit={handleSubmit} className="login-form">
-          <h2>Iniciar Sesión</h2>
+                    {loginError && (
+                        <p className="error">
+                            {loginError}
+                        </p>
+                    )}
 
-          <label>
-            Email
-            <input
-              type="email"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-              placeholder="correo@gmail.com"
-              className={errores.email ? "input-error" : ""}
-            />
-            {errores.email && <span className="error">{errores.email}</span>}
-          </label>
-
-          <label>
-            Contraseña
-            <input
-              type="password"
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
-              placeholder="micontraseña123"
-              className={errores.password ? "input-error" : ""}
-            />
-            {errores.password && <span className="error">{errores.password}</span>}
-          </label>
-
-          <Button type="submit" className="login-button">
-            Entrar
-          </Button>
-        </form>
-      </motion.section>
-    </MainLayout>
-  );
+                    <button
+                        type="button"
+                        className="login-button"
+                        onClick={handleLogin}
+                        disabled={auth.isLoading}
+                    >
+                        Iniciar sesión con Cognito
+                    </button>
+                </div>
+            </motion.section>
+        </MainLayout>
+    );
 }
