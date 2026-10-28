@@ -7,6 +7,7 @@ import {
     getAllOrders,
     updateOrderStatus,
 } from "../../../services/operadorService";
+import Button from "../../01-atoms/Button";
 
 import "./OperadorPanel.css";
 
@@ -108,7 +109,9 @@ export default function OperatorPanel() {
         return (
             <MainLayout>
                 <section className="operator-panel">
-                    <h1>Cargando...</h1>
+                    <div className="operator-panel-content">
+                        <h1>Cargando...</h1>
+                    </div>
                 </section>
             </MainLayout>
         );
@@ -124,16 +127,16 @@ export default function OperatorPanel() {
             <MainLayout>
 
                 <section className="operator-panel">
+                    <div className="operator-panel-content">
+                        <h1>
+                            Acceso denegado
+                        </h1>
 
-                    <h1>
-                        Acceso denegado
-                    </h1>
-
-                    <p>
-                        No tienes permisos para acceder
-                        al panel de operador.
-                    </p>
-
+                        <p>
+                            No tienes permisos para acceder
+                            al panel de operador.
+                        </p>
+                    </div>
                 </section>
 
             </MainLayout>
@@ -199,7 +202,7 @@ export default function OperatorPanel() {
                                     key={pedido.id}
                                 >
 
-                                    <div>
+                                    <div className="order-header">
                                         <h2>
                                             Pedido #{pedido.id}
                                         </h2>
@@ -223,7 +226,7 @@ export default function OperatorPanel() {
                                     </div>
 
 
-                                    <div>
+                                    <div className="order-status-section">
 
                                         <label>
                                             Cambiar estado:
@@ -257,7 +260,7 @@ export default function OperatorPanel() {
                                     </div>
 
 
-                                    <div>
+                                    <div className="products-list">
 
                                         <h3>
                                             Productos
