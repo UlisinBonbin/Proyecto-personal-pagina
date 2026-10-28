@@ -21,4 +21,3 @@ export default function PelucheCard({ id, image, name, price, canBuy= true }) {
     </div>
   )
 }
- <Button variant="secondary">Inicio</Button>
