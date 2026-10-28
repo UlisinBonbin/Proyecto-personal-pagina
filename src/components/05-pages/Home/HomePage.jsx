@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 import MainLayout from "../../04-layouts/MainLayout";
 import "./HomePage.css";
 import { useAuth } from "react-oidc-context";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 
 const clientId = import.meta.env.VITE_COGNITO_CLIENT_ID;
@@ -13,8 +13,13 @@ const logoutUri =
 
 const cognitoDomain = import.meta.env.VITE_COGNITO_DOMAIN;
 
+const API_URL = import.meta.env.VITE_API_URL;
+
 export default function HomePage() {
     const auth = useAuth();
+
+    const [randomProducts, setRandomProducts] = useState([]);
+    const [loadingProducts, setLoadingProducts] = useState(true);
 
     /*
      * Obtener grupos de Cognito
@@ -70,6 +75,41 @@ export default function HomePage() {
     }, [auth.isAuthenticated, auth.user]);
 
     /*
+     * Cargar productos destacados
+     */
+    useEffect(() => {
+        const cargarProductosDestacados = async () => {
+            try {
+                const response = await fetch(
+                    `${API_URL}/api/v1/productos`
+                );
+
+                if (!response.ok) {
+                    throw new Error(
+                        `Error HTTP: ${response.status}`
+                    );
+                }
+
+                const data = await response.json();
+
+                // Obtener los primeros 3 productos
+                const firstThree = data.slice(0, 3);
+
+                setRandomProducts(firstThree);
+            } catch (error) {
+                console.error(
+                    "Error obteniendo productos:",
+                    error
+                );
+            } finally {
+                setLoadingProducts(false);
+            }
+        };
+
+        cargarProductosDestacados();
+    }, []);
+
+    /*
      * Cerrar sesión
      */
     const signOutRedirect = async () => {
@@ -103,6 +143,39 @@ export default function HomePage() {
                 transition={{ duration: 0.4 }}
             >
 
+                <div className="auth-section">
+                    {auth.isLoading && (
+                        <p className="auth-message">
+                            Cargando sesión...
+                        </p>
+                    )}
+
+                    {auth.error && (
+                        <p className="auth-message auth-error">
+                            Error al iniciar sesión:{" "}
+                            {auth.error.message}
+                        </p>
+                    )}
+
+                    {auth.isAuthenticated && (
+                        <div className="auth-user-info">
+                            <p className="auth-greeting">
+                                ¡Hola,{" "}
+                                {auth.user?.profile?.email ||
+                                    "usuario"}
+                                !
+                            </p>
+
+                            <button
+                                className="btn-logout"
+                                onClick={signOutRedirect}
+                            >
+                                Cerrar sesión
+                            </button>
+                        </div>
+                    )}
+                </div>
+
                 <div className="hero-content">
 
                     <h1>
@@ -115,77 +188,45 @@ export default function HomePage() {
                         del anime, videojuegos, series y más.
                     </p>
 
-                    <div
-                        className="auth-container"
-                        style={{
-                            margin: "2rem 0",
-                            padding: "1rem",
-                            background: "rgba(255,255,255,0.1)",
-                            borderRadius: "10px"
-                        }}
-                    >
+                    <div className="featured-products">
+                        <h2>Peluches destacados</h2>
 
-                        {auth.isLoading && (
-                            <p>
-                                Cargando sesión...
-                            </p>
+                        {loadingProducts ? (
+                            <p>Cargando productos...</p>
+                        ) : randomProducts.length > 0 ? (
+                            <>
+                                <div className="featured-grid">
+                                    {randomProducts.map((producto) => (
+                                        <div
+                                            className="featured-card"
+                                            key={producto.id}
+                                        >
+                                            <img
+                                                src={producto.imagenUrl}
+                                                alt={producto.nombre}
+                                            />
+                                            <h3>{producto.nombre}</h3>
+                                            <p>
+                                                $
+                                                {Number(
+                                                    producto.precio
+                                                ).toLocaleString(
+                                                    "es-CL"
+                                                )}
+                                            </p>
+                                        </div>
+                                    ))}
+                                </div>
+
+                                <Link to="/catalog">
+                                    <button className="btn-view-more">
+                                        Ver más
+                                    </button>
+                                </Link>
+                            </>
+                        ) : (
+                            <p>No hay productos disponibles.</p>
                         )}
-
-                        {auth.error && (
-                            <p>
-                                Error al iniciar sesión:{" "}
-                                {auth.error.message}
-                            </p>
-                        )}
-
-                        {auth.isAuthenticated && (
-                            <div>
-
-                                <h2>
-                                    ¡Hola,{" "}
-                                    {auth.user?.profile?.email ||
-                                        "usuario"}
-                                    !
-                                </h2>
-
-                                <button
-                                    className="btn-logout"
-                                    onClick={signOutRedirect}
-                                >
-                                    Cerrar sesión
-                                </button>
-
-                                {isAdmin && (
-                                    <div
-                                        style={{
-                                            marginTop: "1rem"
-                                        }}
-                                    >
-                                        <Link to="/control-panel">
-                                            <button className="btn-admin-panel">
-                                                Panel de Administración
-                                            </button>
-                                        </Link>
-                                    </div>
-                                )}
-                                {isOperator && (
-                                    <div
-                                        style={{
-                                            marginTop: "1rem"
-                                        }}
-                                    >
-                                        <Link to="/operador-panel">
-                                            <button className="btn-operator-panel">
-                                                Panel de Operador
-                                            </button>
-                                        </Link>
-                                    </div>
-                                )}
-
-
-                            </div>
-                        )}
-
                     </div>
 
                 </div>
