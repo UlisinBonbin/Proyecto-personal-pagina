@@ -143,21 +143,21 @@ export default function HomePage() {
                 transition={{ duration: 0.4 }}
             >
 
-                <div className="auth-section">
-                    {auth.isLoading && (
-                        <p className="auth-message">
-                            Cargando sesión...
-                        </p>
-                    )}
+                {auth.isAuthenticated && (
+                    <div className="auth-section">
+                        {auth.isLoading && (
+                            <p className="auth-message">
+                                Cargando sesión...
+                            </p>
+                        )}
 
-                    {auth.error && (
-                        <p className="auth-message auth-error">
-                            Error al iniciar sesión:{" "}
-                            {auth.error.message}
-                        </p>
-                    )}
+                        {auth.error && (
+                            <p className="auth-message auth-error">
+                                Error al iniciar sesión:{" "}
+                                {auth.error.message}
+                            </p>
+                        )}
 
-                    {auth.isAuthenticated && (
                         <div className="auth-user-info">
                             <p className="auth-greeting">
                                 ¡Hola,{" "}
@@ -173,8 +173,8 @@ export default function HomePage() {
                                 Cerrar sesión
                             </button>
                         </div>
-                    )}
-                </div>
+                    </div>
+                )}
 
                 <div className="hero-content">
 
