@@ -19,8 +19,6 @@ export default function Header() {
       ? grupos.includes("OPERADOR")
       : grupos === "OPERADOR";
 
-  const canAccessControlPanel = auth.isAuthenticated && (isAdmin || isOperator);
-
   return (
     <header className="header-container">
 
@@ -44,9 +42,15 @@ export default function Header() {
           <Button variant="secondary">Nosotros</Button>
         </Link>
 
-        {canAccessControlPanel && (
+        {auth.isAuthenticated && isAdmin && (
           <Link to="/control-panel">
             <Button variant="secondary">Panel de Control</Button>
+          </Link>
+        )}
+
+        {auth.isAuthenticated && isOperator && (
+          <Link to="/operador-panel">
+            <Button variant="secondary">Panel de Operador</Button>
           </Link>
         )}
 
