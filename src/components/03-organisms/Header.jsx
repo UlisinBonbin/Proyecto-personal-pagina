@@ -8,6 +8,19 @@ import { useAuth } from "react-oidc-context";
 
 export default function Header() {
   const auth = useAuth();
+
+  const grupos = auth.user?.profile?.["cognito:groups"] || [];
+
+  const isAdmin = Array.isArray(grupos)
+      ? grupos.includes("ADMINISTRADOR")
+      : grupos === "ADMINISTRADOR";
+
+  const isOperator = Array.isArray(grupos)
+      ? grupos.includes("OPERADOR")
+      : grupos === "OPERADOR";
+
+  const canAccessControlPanel = auth.isAuthenticated && (isAdmin || isOperator);
+
   return (
     <header className="header-container">
 
@@ -31,9 +44,11 @@ export default function Header() {
           <Button variant="secondary">Nosotros</Button>
         </Link>
 
-        <Link to="/control-panel">
-          <Button variant="secondary">Panel de Control</Button>
-        </Link>
+        {canAccessControlPanel && (
+          <Link to="/control-panel">
+            <Button variant="secondary">Panel de Control</Button>
+          </Link>
+        )}
 
         <Button
             variant="primary"
@@ -41,9 +56,9 @@ export default function Header() {
         >
             Iniciar sesión
         </Button>
-      
+
       <Link to="/cart" className="cart-icon">
-        <MdShoppingCart size={28} /> 
+        <MdShoppingCart size={28} />
         </Link>
       </nav>
     </header>
